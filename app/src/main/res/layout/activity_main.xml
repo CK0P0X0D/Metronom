@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ua.ck0p0x0dstudio.metronom.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MANUAL MODE"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="140dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView4" />
+
+    <ua.ck0p0x0dstudio.metronom.CustomSeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:id="@+id/seekBar"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <ToggleButton
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButtonStartStop"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:background="@drawable/states_button"
+        android:textOff="START"
+        android:textOn="STOP"
+        android:onClick="onToggleButtonStartStop"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SET BPM NEED BELOW"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:id="@+id/textView"
+        android:layout_above="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bpm"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/seekBar"
+        android:layout_marginBottom="10dp"
+        android:layout_alignRight="@+id/toggleButtonIndicator"
+        android:layout_alignEnd="@+id/toggleButtonIndicator" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:minEms="0"
+        android:maxEms="100"
+        android:text="@string/bpm"
+        android:id="@+id/bpm"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toLeftOf="@+id/textView3"
+        android:background="@color/bg"
+        android:numeric="integer"
+        android:gravity="center"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:maxLength="3"
+        android:layout_alignLeft="@+id/toggleButtonIndicator"
+        android:layout_alignStart="@+id/toggleButtonIndicator" />
+
+    <ToggleButton
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:id="@+id/toggleButtonFlash"
+        android:layout_marginBottom="25dp"
+        android:checked="false"
+        android:onClick="onToggleButtonFlash"
+        android:drawableTop="@drawable/flash_on_off"
+        android:background="@drawable/buttons_bgs"
+        android:textOff="FLASH"
+        android:textOn="FLASH"
+        android:layout_above="@+id/textView"
+        android:layout_alignLeft="@+id/toggleButtonStartStop"
+        android:layout_alignStart="@+id/toggleButtonStartStop" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:id="@+id/toggleButtonVibration"
+        android:layout_alignBottom="@+id/toggleButtonFlash"
+        android:checked="false"
+        android:onClick="onToggleButtonVibration"
+        android:drawableTop="@drawable/vibration_on_off"
+        android:background="@drawable/buttons_bgs"
+        android:layout_toLeftOf="@+id/toggleButtonFlash"
+        android:textOff="VIBRATION"
+        android:textOn="VIBRATION"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/toggleButtonFlash" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleButtonSound"
+        android:checked="false"
+        android:onClick="onToggleButtonSound"
+        android:drawableTop="@drawable/sound_on_off"
+        android:background="@drawable/buttons_bgs"
+        android:textOff="SOUND"
+        android:textOn="SOUND"
+        android:layout_alignBottom="@+id/toggleButtonFlash"
+        android:layout_alignTop="@+id/toggleButtonFlash"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/toggleButtonFlash"
+        android:layout_toEndOf="@+id/toggleButtonFlash" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="INDICATOR"
+        android:textOn="INDICATOR"
+        android:id="@+id/toggleButtonIndicator"
+        android:checked="false"
+        android:onClick="onToggleButtonIndicator"
+        android:layout_above="@+id/toggleButtonStartStop"
+        android:layout_centerHorizontal="true"
+        android:drawableBottom="@drawable/state_indicator"
+        android:background="@drawable/indicator_bg"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@+id/seekBar"
+        android:layout_marginTop="20dp"/>
+
+
+</RelativeLayout>
